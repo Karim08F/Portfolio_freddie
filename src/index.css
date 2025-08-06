@@ -2,41 +2,56 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Modern Portfolio Design System - Dark theme with vibrant accents */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Dark Portfolio Theme */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 263 70% 50%;
+    --primary-foreground: 213 31% 91%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 215 25% 27%;
+    --secondary-foreground: 213 31% 91%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 25% 27%;
+    --muted-foreground: 217 11% 65%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 196 75% 55%;
+    --accent-foreground: 224 71% 4%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 213 31% 91%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 25% 27%;
+    --input: 215 25% 27%;
+    --ring: 263 70% 50%;
 
-    --radius: 0.5rem;
+    /* Portfolio specific tokens */
+    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(196 75% 55%));
+    --gradient-secondary: linear-gradient(135deg, hsl(224 71% 4%), hsl(215 25% 27%));
+    --gradient-hero: linear-gradient(135deg, hsl(263 70% 50% / 0.1), hsl(196 75% 55% / 0.1));
+    
+    /* Glass morphism effects */
+    --glass-bg: hsl(224 71% 4% / 0.8);
+    --glass-border: hsl(213 31% 91% / 0.1);
+    
+    /* Shadows with primary color */
+    --shadow-glow: 0 0 50px hsl(263 70% 50% / 0.3);
+    --shadow-card: 0 10px 30px hsl(224 71% 4% / 0.5);
+    
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,12 +109,95 @@ All colors MUST be HSL.
   }
 }
 
+}
+
 @layer base {
   * {
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
+    background-image: var(--gradient-secondary);
+    background-attachment: fixed;
+  }
+}
+
+@layer components {
+  /* Glass morphism card effect */
+  .glass-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Gradient text effect */
+  .gradient-text {
+    background: var(--gradient-primary);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glow effect */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  /* Hover scale animation */
+  .hover-scale {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+
+  /* Floating animation */
+  .floating {
+    animation: floating 3s ease-in-out infinite;
+  }
+
+  @keyframes floating {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Fade in animation */
+  .fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+
+  /* Skill card hover effect */
+  .skill-card {
+    transition: var(--transition-smooth);
+    border: 1px solid var(--border);
+  }
+
+  .skill-card:hover {
+    border-color: hsl(var(--primary));
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-5px);
   }
 }
