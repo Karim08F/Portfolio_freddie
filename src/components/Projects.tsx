@@ -1,65 +1,71 @@
-import { ExternalLink, Github, Eye, Star } from 'lucide-react';
+import { ExternalLink, Github, Eye, Star, Leaf, Users, Smartphone, BarChart3 } from 'lucide-react';
 
 const Projects = () => {
-  const projects = [
+  const featuredProjects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and Stripe integration. Features include user authentication, product management, shopping cart, and payment processing.",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=400&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Tailwind CSS"],
-      liveLink: "https://example-ecommerce.com",
-      githubLink: "https://github.com/username/ecommerce",
-      featured: true
+      title: "AgriTech Smart Farming Solution",
+      description: "AI-powered mobile application helping Kenyan farmers optimize crop yields through weather data, soil analysis, and farming recommendations. Features real-time monitoring and community knowledge sharing.",
+      image: "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&h=400&fit=crop",
+      technologies: ["React Native", "Python", "Django", "Machine Learning", "IoT Sensors"],
+      liveLink: "https://agritech-kenya.com",
+      githubLink: "https://github.com/fredrickmwangolo/agritech-app",
+      impact: "500+ farmers using the platform",
+      featured: true,
+      icon: <Leaf className="w-6 h-6" />
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates. Built with React, Socket.io for real-time communication, and Express.js backend.",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=800&h=400&fit=crop",
-      technologies: ["React", "Socket.io", "Express.js", "PostgreSQL", "Material-UI"],
-      liveLink: "https://example-tasks.com",
-      githubLink: "https://github.com/username/task-manager",
-      featured: true
+      title: "Career Guidance Platform",
+      description: "Comprehensive platform connecting students with industry mentors for career guidance. Features include skill assessments, career path recommendations, and virtual mentorship sessions.",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop",
+      technologies: ["React", "Node.js", "PostgreSQL", "Socket.io", "AWS"],
+      liveLink: "https://career-guidance.co.ke",
+      githubLink: "https://github.com/fredrickmwangolo/career-platform",
+      impact: "200+ student-mentor connections",
+      featured: true,
+      icon: <Users className="w-6 h-6" />
     },
     {
-      title: "Weather Dashboard",
-      description: "Beautiful weather application with location-based forecasts, interactive maps, and weather alerts. Integrates with multiple weather APIs for accurate data.",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=800&h=400&fit=crop",
-      technologies: ["Vue.js", "OpenWeather API", "Chart.js", "Vuetify"],
-      liveLink: "https://example-weather.com",
-      githubLink: "https://github.com/username/weather-app",
-      featured: false
-    },
-    {
-      title: "Portfolio Website",
-      description: "Personal portfolio website showcasing projects and skills. Built with modern technologies and optimized for performance and SEO.",
-      image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=400&fit=crop",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      liveLink: "https://example-portfolio.com",
-      githubLink: "https://github.com/username/portfolio",
-      featured: false
-    },
-    {
-      title: "Social Media Analytics",
-      description: "Analytics dashboard for social media metrics with data visualization and reporting features. Connects to multiple social platforms APIs.",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop",
-      technologies: ["Python", "Django", "React", "D3.js", "PostgreSQL"],
-      liveLink: "https://example-analytics.com",
-      githubLink: "https://github.com/username/social-analytics",
-      featured: true
-    },
-    {
-      title: "Cryptocurrency Tracker",
-      description: "Real-time cryptocurrency price tracking application with portfolio management, price alerts, and market analysis tools.",
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=400&fit=crop",
-      technologies: ["React Native", "CoinGecko API", "Redux", "AsyncStorage"],
-      liveLink: "https://example-crypto.com",
-      githubLink: "https://github.com/username/crypto-tracker",
-      featured: false
+      title: "Student Management System",
+      description: "Modern university administration system for Dedan Kimathi University. Streamlines student registration, grade management, and communication between students and faculty.",
+      image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=400&fit=crop",
+      technologies: ["Vue.js", "Laravel", "MySQL", "Redis", "Docker"],
+      liveLink: "https://dekut-sms.edu",
+      githubLink: "https://github.com/fredrickmwangolo/student-management",
+      impact: "5000+ students served",
+      featured: true,
+      icon: <Smartphone className="w-6 h-6" />
     }
   ];
 
-  const featuredProjects = projects.filter(project => project.featured);
-  const otherProjects = projects.filter(project => !project.featured);
+  const otherProjects = [
+    {
+      title: "Community Impact Tracker",
+      description: "Platform for tracking and measuring social impact of community development projects across Kenya.",
+      image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&h=300&fit=crop",
+      technologies: ["React", "Firebase", "Chart.js", "Tailwind CSS"],
+      liveLink: "https://impact-tracker.ke",
+      githubLink: "https://github.com/fredrickmwangolo/impact-tracker",
+      icon: <BarChart3 className="w-5 h-5" />
+    },
+    {
+      title: "Youth Skills Development App",
+      description: "Mobile app providing free tech skills training and certification for African youth.",
+      image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?w=600&h=300&fit=crop",
+      technologies: ["Flutter", "Firebase", "Dart", "YouTube API"],
+      liveLink: "https://skills-app.africa",
+      githubLink: "https://github.com/fredrickmwangolo/skills-app",
+      icon: <Users className="w-5 h-5" />
+    },
+    {
+      title: "Local Business Directory",
+      description: "Digital platform promoting local Kenyan businesses with e-commerce capabilities.",
+      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=300&fit=crop",
+      technologies: ["Next.js", "Stripe", "MongoDB", "Vercel"],
+      liveLink: "https://business-ke.com",
+      githubLink: "https://github.com/fredrickmwangolo/business-directory",
+      icon: <ExternalLink className="w-5 h-5" />
+    }
+  ];
 
   return (
     <section id="projects" className="py-20 px-6">
@@ -69,41 +75,60 @@ const Projects = () => {
             Featured Projects
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A showcase of my recent work and contributions to the tech community
+            Technology solutions that make a difference in communities across Africa
           </p>
         </div>
 
         {/* Featured Projects */}
         <div className="mb-16">
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="space-y-12">
             {featuredProjects.map((project, index) => (
               <div
                 key={project.title}
-                className="group glass-card rounded-xl overflow-hidden hover-scale transition-all duration-300"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`grid lg:grid-cols-2 gap-8 items-center ${
+                  index % 2 === 1 ? 'lg:grid-flow-dense' : ''
+                }`}
+                style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="absolute top-4 right-4">
-                    <div className="flex items-center space-x-1 bg-background/80 backdrop-blur-sm px-2 py-1 rounded-full">
-                      <Star className="w-4 h-4 text-yellow-500 fill-current" />
-                      <span className="text-sm font-medium">Featured</span>
+                {/* Project Image */}
+                <div className={`relative group ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                  <div className="relative overflow-hidden rounded-xl">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute top-4 right-4">
+                      <div className="flex items-center space-x-1 bg-background/80 backdrop-blur-sm px-3 py-2 rounded-full">
+                        <Star className="w-4 h-4 text-yellow-500 fill-current" />
+                        <span className="text-sm font-medium">Featured</span>
+                      </div>
                     </div>
                   </div>
                 </div>
-                
-                <div className="p-6">
-                  <h3 className="text-2xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
+
+                {/* Project Content */}
+                <div className={`glass-card p-8 rounded-xl ${index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}`}>
+                  <div className="flex items-center mb-4">
+                    <div className="text-primary mr-3">
+                      {project.icon}
+                    </div>
+                    <h3 className="text-2xl font-semibold text-foreground">
+                      {project.title}
+                    </h3>
+                  </div>
+                  
                   <p className="text-muted-foreground mb-4 leading-relaxed">
                     {project.description}
                   </p>
+                  
+                  {/* Impact Metric */}
+                  <div className="mb-4">
+                    <div className="inline-flex items-center px-3 py-1 bg-accent/20 text-accent rounded-full text-sm font-medium">
+                      {project.impact}
+                    </div>
+                  </div>
                   
                   <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech) => (
@@ -116,12 +141,12 @@ const Projects = () => {
                     ))}
                   </div>
                   
-                  <div className="flex space-x-4">
+                  <div className="flex flex-col sm:flex-row gap-4">
                     <a
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors duration-300"
+                      className="flex items-center justify-center px-6 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-medium hover-scale transition-all duration-300"
                     >
                       <Eye className="w-4 h-4 mr-2" />
                       Live Demo
@@ -130,10 +155,10 @@ const Projects = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg transition-colors duration-300"
+                      className="flex items-center justify-center px-6 py-3 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-lg font-medium transition-all duration-300"
                     >
                       <Github className="w-4 h-4 mr-2" />
-                      Code
+                      View Code
                     </a>
                   </div>
                 </div>
@@ -145,7 +170,7 @@ const Projects = () => {
         {/* Other Projects */}
         <div>
           <h3 className="text-3xl font-semibold mb-8 text-center text-primary">
-            More Projects
+            More Impact Projects
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherProjects.map((project, index) => (
@@ -158,15 +183,20 @@ const Projects = () => {
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-32 object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-40 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
+                  <div className="absolute top-3 left-3">
+                    <div className="p-2 bg-background/80 backdrop-blur-sm rounded-lg text-primary">
+                      {project.icon}
+                    </div>
+                  </div>
                 </div>
                 
-                <div className="p-4">
+                <div className="p-6">
                   <h4 className="text-lg font-semibold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h4>
-                  <p className="text-muted-foreground text-sm mb-3 line-clamp-2">
+                  <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
                     {project.description}
                   </p>
                   
@@ -191,7 +221,7 @@ const Projects = () => {
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-3 py-1 bg-primary text-primary-foreground rounded text-sm hover:bg-primary/90 transition-colors duration-300"
+                      className="flex-1 flex items-center justify-center px-3 py-2 bg-primary text-primary-foreground rounded text-sm hover:bg-primary/90 transition-colors duration-300"
                     >
                       <ExternalLink className="w-3 h-3 mr-1" />
                       Demo
@@ -200,7 +230,7 @@ const Projects = () => {
                       href={project.githubLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center px-3 py-1 border border-primary text-primary rounded text-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
+                      className="flex-1 flex items-center justify-center px-3 py-2 border border-primary text-primary rounded text-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-300"
                     >
                       <Github className="w-3 h-3 mr-1" />
                       Code
@@ -215,17 +245,18 @@ const Projects = () => {
         {/* Call to Action */}
         <div className="text-center mt-16">
           <div className="glass-card p-8 rounded-xl max-w-2xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-4 text-primary">
-              Interested in collaborating?
+            <h3 className="text-2xl font-semibold mb-4 gradient-text">
+              Let's Build Something Amazing Together
             </h3>
             <p className="text-muted-foreground mb-6">
-              I'm always open to discussing new projects and opportunities. Let's build something amazing together!
+              Have an idea for a tech-for-good project? Looking for a collaborator who understands 
+              the African tech landscape? I'm always excited to work on impactful solutions.
             </p>
             <a
               href="#contact"
               className="inline-flex items-center px-6 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold hover-scale transition-all duration-300"
             >
-              Start a Conversation
+              Let's Collaborate
             </a>
           </div>
         </div>

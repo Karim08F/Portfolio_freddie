@@ -1,53 +1,53 @@
-import { Brain, Rocket, Users, Globe, Code2, Lightbulb, Music, Camera } from 'lucide-react';
+import { Lightbulb, Users, Heart, Globe, Rocket, Code, BookOpen, Mic } from 'lucide-react';
 
 const Interests = () => {
   const techInterests = [
     {
-      icon: <Brain className="w-8 h-8" />,
-      title: "Artificial Intelligence",
-      description: "Exploring machine learning algorithms and AI applications in web development",
-      color: "from-purple-500 to-pink-500"
+      icon: <Heart className="w-8 h-8" />,
+      title: "Tech for Good",
+      description: "Developing technology solutions that address social challenges and empower underserved communities",
+      color: "from-red-500 to-pink-500"
     },
     {
-      icon: <Rocket className="w-8 h-8" />,
-      title: "Space Technology",
-      description: "Fascinated by space exploration and satellite communication systems",
+      icon: <Users className="w-8 h-8" />,
+      title: "Youth Mentorship",
+      description: "Guiding young minds in technology and leadership, creating pathways for success",
       color: "from-blue-500 to-cyan-500"
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "Web3 & Blockchain",
-      description: "Building decentralized applications and exploring cryptocurrency technologies",
-      color: "from-green-500 to-teal-500"
+      title: "African Tech Innovation",
+      description: "Contributing to Africa's digital transformation through innovative technological solutions",
+      color: "from-green-500 to-emerald-500"
     },
     {
-      icon: <Code2 className="w-8 h-8" />,
-      title: "Open Source",
-      description: "Contributing to open source projects and building tools for the developer community",
-      color: "from-orange-500 to-red-500"
+      icon: <Rocket className="w-8 h-8" />,
+      title: "Innovation Research",
+      description: "Exploring cutting-edge technologies like AI, blockchain, and IoT for practical applications",
+      color: "from-purple-500 to-violet-500"
     }
   ];
 
   const personalInterests = [
     {
+      icon: <BookOpen className="w-6 h-6" />,
+      title: "Leadership Development",
+      description: "Studying leadership principles and applying them in tech and community settings"
+    },
+    {
+      icon: <Code className="w-6 h-6" />,
+      title: "Open Source",
+      description: "Contributing to open source projects that benefit the global developer community"
+    },
+    {
+      icon: <Mic className="w-6 h-6" />,
+      title: "Public Speaking",
+      description: "Sharing knowledge at tech conferences and community events across Kenya"
+    },
+    {
       icon: <Lightbulb className="w-6 h-6" />,
-      title: "Innovation",
-      description: "Always looking for creative solutions to complex problems"
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Mentoring",
-      description: "Teaching and guiding aspiring developers in their journey"
-    },
-    {
-      icon: <Music className="w-6 h-6" />,
-      title: "Music Production",
-      description: "Creating electronic music and exploring sound design"
-    },
-    {
-      icon: <Camera className="w-6 h-6" />,
-      title: "Photography",
-      description: "Capturing moments and experimenting with visual storytelling"
+      title: "Problem Solving",
+      description: "Tackling complex challenges with creative and innovative technological approaches"
     }
   ];
 
@@ -56,17 +56,17 @@ const Interests = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Interests & Passions
+            Passions & Interests
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            What drives my curiosity and fuels my passion for technology and creativity
+            What drives my commitment to technology, leadership, and community impact
           </p>
         </div>
 
-        {/* Tech Interests */}
+        {/* Core Interests */}
         <div className="mb-16">
           <h3 className="text-3xl font-semibold mb-8 text-center text-primary">
-            Technology Interests
+            Core Passions
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             {techInterests.map((interest, index) => (
@@ -97,10 +97,10 @@ const Interests = () => {
           </div>
         </div>
 
-        {/* Personal Interests */}
-        <div>
+        {/* Additional Interests */}
+        <div className="mb-16">
           <h3 className="text-3xl font-semibold mb-8 text-center text-primary">
-            Beyond Code
+            Beyond Technology
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {personalInterests.map((interest, index) => (
@@ -123,32 +123,51 @@ const Interests = () => {
           </div>
         </div>
 
-        {/* What Excites Me Section */}
-        <div className="mt-16 text-center">
+        {/* Community Impact Focus */}
+        <div className="text-center">
           <div className="glass-card p-8 rounded-xl max-w-4xl mx-auto">
-            <h3 className="text-2xl font-semibold mb-6 text-primary">
-              What Excites Me About Tech
+            <h3 className="text-2xl font-semibold mb-6 gradient-text">
+              Community Impact Philosophy
             </h3>
             <div className="grid md:grid-cols-3 gap-6 text-left">
               <div>
-                <h4 className="font-semibold mb-2 text-accent">Innovation</h4>
+                <h4 className="font-semibold mb-2 text-primary">Empowerment</h4>
                 <p className="text-muted-foreground text-sm">
-                  The endless possibilities of creating something that has never existed before
+                  Using technology to create opportunities and empower individuals to reach their full potential
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2 text-accent">Impact</h4>
+                <h4 className="font-semibold mb-2 text-accent">Education</h4>
                 <p className="text-muted-foreground text-sm">
-                  Building solutions that make a real difference in people's lives
+                  Sharing knowledge and skills to build a stronger tech community across Africa
                 </p>
               </div>
               <div>
-                <h4 className="font-semibold mb-2 text-accent">Learning</h4>
+                <h4 className="font-semibold mb-2 text-primary">Innovation</h4>
                 <p className="text-muted-foreground text-sm">
-                  The constant evolution of technology keeps every day exciting and challenging
+                  Pioneering solutions that address real-world challenges and drive sustainable development
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16 text-center">
+          <div className="glass-card p-6 rounded-xl max-w-2xl mx-auto">
+            <h4 className="text-lg font-semibold mb-3 text-primary">
+              Let's Create Impact Together
+            </h4>
+            <p className="text-muted-foreground mb-4">
+              Interested in collaborating on tech-for-good projects or discussing innovative solutions? 
+              I'd love to connect with like-minded individuals and organizations.
+            </p>
+            <a
+              href="#contact"
+              className="inline-flex items-center px-6 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-semibold hover-scale transition-all duration-300"
+            >
+              Start a Conversation
+            </a>
           </div>
         </div>
       </div>

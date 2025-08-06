@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { Menu, X } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +17,7 @@ const Header = () => {
     { href: '#about', label: 'About' },
     { href: '#skills', label: 'Skills' },
     { href: '#education', label: 'Education' },
+    { href: '#interests', label: 'Interests' },
     { href: '#projects', label: 'Projects' },
     { href: '#contact', label: 'Contact' },
   ];
@@ -22,21 +25,23 @@ const Header = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-card' : 'bg-transparent'
+        isScrolled ? 'glass-card shadow-lg' : 'bg-transparent'
       }`}
     >
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="text-2xl font-bold gradient-text">
-            Portfolio
+            Fredrick Mwangolo
           </div>
           
+          {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 relative group"
+                className="text-foreground hover:text-primary transition-colors duration-300 relative group font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary group-hover:w-full transition-all duration-300"></span>
@@ -44,14 +49,32 @@ const Header = () => {
             ))}
           </div>
 
-          <div className="md:hidden">
-            <button className="text-foreground hover:text-primary">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden text-foreground hover:text-primary transition-colors duration-300"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </nav>
+
+        {/* Mobile Navigation */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden mt-4 glass-card rounded-lg p-4">
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );

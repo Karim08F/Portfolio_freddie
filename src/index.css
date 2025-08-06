@@ -2,51 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Modern Portfolio Design System - Dark theme with vibrant accents */
+/* Fredrick Mwangolo Portfolio - African Tech Innovation Theme */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @layer base {
   :root {
-    /* Dark Portfolio Theme */
-    --background: 224 71% 4%;
-    --foreground: 213 31% 91%;
+    /* African Tech Innovation Color Palette */
+    --background: 220 25% 5%;
+    --foreground: 60 9% 98%;
 
-    --card: 224 71% 4%;
-    --card-foreground: 213 31% 91%;
+    --card: 220 25% 8%;
+    --card-foreground: 60 9% 98%;
 
-    --popover: 224 71% 4%;
-    --popover-foreground: 213 31% 91%;
+    --popover: 220 25% 8%;
+    --popover-foreground: 60 9% 98%;
 
-    --primary: 263 70% 50%;
-    --primary-foreground: 213 31% 91%;
+    /* Vibrant African-inspired primary colors */
+    --primary: 64 91% 58%;  /* Vibrant lime green #D6ED17 */
+    --primary-foreground: 220 25% 5%;
 
-    --secondary: 215 25% 27%;
-    --secondary-foreground: 213 31% 91%;
+    --secondary: 220 25% 15%;
+    --secondary-foreground: 60 9% 98%;
 
-    --muted: 215 25% 27%;
-    --muted-foreground: 217 11% 65%;
+    --muted: 220 25% 15%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 196 75% 55%;
-    --accent-foreground: 224 71% 4%;
+    --accent: 32 95% 50%;  /* Vibrant orange accent */
+    --accent-foreground: 220 25% 5%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 213 31% 91%;
+    --destructive-foreground: 60 9% 98%;
 
-    --border: 215 25% 27%;
-    --input: 215 25% 27%;
-    --ring: 263 70% 50%;
+    --border: 220 25% 15%;
+    --input: 220 25% 15%;
+    --ring: 64 91% 58%;
 
-    /* Portfolio specific tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(263 70% 50%), hsl(196 75% 55%));
-    --gradient-secondary: linear-gradient(135deg, hsl(224 71% 4%), hsl(215 25% 27%));
-    --gradient-hero: linear-gradient(135deg, hsl(263 70% 50% / 0.1), hsl(196 75% 55% / 0.1));
+    /* African tech innovation gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(64 91% 58%), hsl(32 95% 50%));
+    --gradient-secondary: linear-gradient(135deg, hsl(220 25% 8%), hsl(220 25% 12%));
+    --gradient-hero: linear-gradient(135deg, hsl(64 91% 58% / 0.1), hsl(32 95% 50% / 0.1));
+    --gradient-african: linear-gradient(45deg, hsl(64 91% 58%), hsl(120 60% 50%), hsl(32 95% 50%));
     
     /* Glass morphism effects */
-    --glass-bg: hsl(224 71% 4% / 0.8);
-    --glass-border: hsl(213 31% 91% / 0.1);
+    --glass-bg: hsl(220 25% 8% / 0.8);
+    --glass-border: hsl(60 9% 98% / 0.1);
     
-    /* Shadows with primary color */
-    --shadow-glow: 0 0 50px hsl(263 70% 50% / 0.3);
-    --shadow-card: 0 10px 30px hsl(224 71% 4% / 0.5);
+    /* Tech innovation shadows */
+    --shadow-glow: 0 0 50px hsl(64 91% 58% / 0.3);
+    --shadow-card: 0 10px 30px hsl(220 25% 5% / 0.5);
+    --shadow-african: 0 0 30px hsl(32 95% 50% / 0.2);
     
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -107,8 +111,6 @@
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
-}
-
 }
 
 @layer base {
